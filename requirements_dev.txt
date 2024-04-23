@@ -1,0 +1,16 @@
+pandas
+scikit-learn
+numpy
+seaborn
+flask
+mlflow==2.2.2
+dvc
+apache-airflow
+
+# testing packages
+pytest==7.1.3
+tox==3.25.1
+black==22.8.0
+mypy==0.971
+
+-e .

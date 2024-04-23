@@ -1,0 +1,6 @@
+[2024-04-23 12:14:52,205] - 34  root - INFO- Data Transformation is initiated
+[2024-04-23 12:14:52,243] - 39  root - INFO- Successfully read data
+[2024-04-23 12:14:52,340] - 44  root - INFO- Succesfully Generated RFM Features and Scores for each user
+[2024-04-23 12:14:52,340] - 47  root - INFO- Saved the user's RFM data
+[2024-04-23 12:14:52,355] - 51  root - INFO- Succesfully added RFM Features for each users in data
+[2024-04-23 12:14:52,371] - 55  root - INFO- Saved data with RFM features

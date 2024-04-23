@@ -1,0 +1,5 @@
+[2024-04-23 10:20:30,119] - 31  root - INFO- Data Ingestion Started
+[2024-04-23 10:20:32,049] - 35  root - INFO- Reading Dataframe
+[2024-04-23 10:20:32,074] - 42  root - INFO- Saved the raw data in the artifacts folder
+[2024-04-23 10:20:32,081] - 50  root - INFO- Sucessfully done Basic Preporcessing (Filling NaN, eliminating duplicate categories)
+[2024-04-23 10:20:32,081] - 59  root - INFO- Exception occured in the data_ingestion
