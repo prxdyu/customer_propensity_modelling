@@ -1,6 +1,0 @@
-[2024-04-23 11:35:15,208] - 30  root - INFO- Data Ingestion Started
-[2024-04-23 11:35:20,432] - 34  root - INFO- Reading Dataframe
-[2024-04-23 11:35:20,432] - 36  root - INFO- the dtype is object
-[2024-04-23 11:35:20,463] - 43  root - INFO- Saved the raw data in the artifacts folder
-[2024-04-23 11:35:20,463] - 51  root - INFO- Sucessfully done Basic Preporcessing (Filling NaN, eliminating duplicate categories)
-[2024-04-23 11:35:20,478] - 55  root - INFO- Data Ingestion Completed

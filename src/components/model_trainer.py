@@ -1,9 +1,13 @@
 import pandas as pd
 import numpy as np
 
-from xgboost import XGBRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression,Lasso,Ridge,ElasticNet
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from xgboost import XGBClassifier
+
 
 
 from src.logger.logger import logging
@@ -27,12 +31,12 @@ class ModelTrainer:
 
     def initiate_model_training(self,x_train,y_train,x_test,y_test):
         try:
-            models={ 'Linear regression': LinearRegression(),
-                     'Lasso': Lasso(),
-                     'Ridge': Ridge(),
-                     'ElasticNet':ElasticNet(),
-                     'RandomForest':RandomForestRegressor(),
-                     'XGBoost': XGBRegressor()
+            models={ 'Logistic Regression': LogisticRegression(),
+                     'Decision Tree': DecisionTreeClassifier(),
+                     'KNN': KNeighborsClassifier(),
+                     'RF':RandomForestClassifier(),
+                     'GBDT':GradientBoostingClassifier(),
+                     'XGBoost': XGBClassifier()
                      }
             logging.info("Model Fitting Started")
             model_report:dict = evaluate_model(x_train,y_train,x_test,y_test,models)
@@ -52,7 +56,7 @@ class ModelTrainer:
             best_model = models[best_model_name]
 
             print('\n====================================================================================\n')
-            print(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
+            print(f'Best Model Found , Model Name : {best_model_name} , F1 Score : {best_model_score}')
 
             logging.info(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
 
@@ -64,3 +68,5 @@ class ModelTrainer:
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")
             raise CustomException(e,sys)
+        
+

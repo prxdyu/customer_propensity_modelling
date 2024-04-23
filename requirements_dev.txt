@@ -6,6 +6,7 @@ flask
 mlflow==2.2.2
 dvc
 apache-airflow
+category_encoders
 
 # testing packages
 pytest==7.1.3

@@ -13,7 +13,7 @@ from src.logger.logger import logging
 from src.exception.exception import CustomException
 
 from urllib.parse import urlparse
-from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
+from sklearn.metrics import f1_score,confusion_matrix
 
 
 
@@ -23,10 +23,13 @@ class ModelEvaluation:
         pass
 
     def eval_metrics(self,y_true,y_pred):
-        rmse=np.sqrt(mean_squared_error(y_true,y_pred))
-        mae=mean_absolute_error(y_true,y_pred)
-        r2=r2_score(y_true,y_pred)
-        return rmse,mae,r2
+        # computing f1 score
+        f1score = f1_score(y_true, y_pred)
+        # computing flase positive and false negative rate
+        tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+        fpr = fp / (fp + tn)
+        fnr = fn / (tp + fn)
+        return f1score,fpr,fnr
 
     def initiate_model_evaluation(self,x_train,y_train,x_test,y_test):
         try:
@@ -43,11 +46,11 @@ class ModelEvaluation:
             with mlflow.start_run():
                 predictions=model.predict(x_test)
                 # getting the metrics
-                (rmse,mae,r2)=self.eval_metrics(predictions,y_test)
+                (f1score,fpr,fnr)=self.eval_metrics(predictions,y_test)
                 # logging the metrics
-                mlflow.log_metric("rmse",rmse)
-                mlflow.log_metric("mae",mae)
-                mlflow.log_metric("r2",r2)
+                mlflow.log_metric("f1_score",f1score)
+                mlflow.log_metric("false_positive_rate",fpr)
+                mlflow.log_metric("false_negative_rate",fnr)
                 
                 # if the tracking is not a file type then the mlflow is registring models in the cloud or db 
                 if tracking_url_type!="file":

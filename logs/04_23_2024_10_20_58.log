@@ -1,5 +1,0 @@
-[2024-04-23 10:20:58,559] - 31  root - INFO- Data Ingestion Started
-[2024-04-23 10:20:59,834] - 35  root - INFO- Reading Dataframe
-[2024-04-23 10:20:59,853] - 42  root - INFO- Saved the raw data in the artifacts folder
-[2024-04-23 10:20:59,856] - 50  root - INFO- Sucessfully done Basic Preporcessing (Filling NaN, eliminating duplicate categories)
-[2024-04-23 10:20:59,873] - 54  root - INFO- Data Ingestion Completed

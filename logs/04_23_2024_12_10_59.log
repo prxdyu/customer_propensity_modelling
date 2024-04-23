@@ -1,6 +1,0 @@
-[2024-04-23 12:10:59,877] - 30  root - INFO- Data Ingestion Started
-[2024-04-23 12:11:04,512] - 34  root - INFO- Reading Dataframe
-[2024-04-23 12:11:04,512] - 37  root - INFO- the dtype is datetime64[ns]
-[2024-04-23 12:11:04,546] - 44  root - INFO- Saved the raw data in the artifacts folder
-[2024-04-23 12:11:04,546] - 52  root - INFO- Sucessfully done Basic Preporcessing (Filling NaN, eliminating duplicate categories)
-[2024-04-23 12:11:04,563] - 56  root - INFO- Data Ingestion Completed

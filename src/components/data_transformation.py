@@ -20,7 +20,7 @@ class DataTransformationConfig:
     # defining the path for the user's RFM data
     users_rfm_data_file_path:str = os.path.join("artifacts","user_rfm_data.csv")
     # defining the path for the data with RFM features
-    data_with_rfm_features_file_path:str = os.path.join("artifacts","data_with_rfm_features.csv")
+    data_with_rfm_features_file_path:str = os.path.join("artifacts","raw_with_rfm_features.csv")
     
 
 class DataTransformation:

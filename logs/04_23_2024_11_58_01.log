@@ -1,3 +1,0 @@
-[2024-04-23 11:58:01,250] - 30  root - INFO- Data Ingestion Started
-[2024-04-23 11:58:02,226] - 34  root - INFO- Reading Dataframe
-[2024-04-23 11:58:02,226] - 61  root - INFO- Exception occured in the data_ingestion

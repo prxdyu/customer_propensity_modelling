@@ -1,3 +1,0 @@
-[2024-04-23 11:20:38,148] - 34  root - INFO- Data Transformation is initiated
-[2024-04-23 11:20:38,210] - 39  root - INFO- Successfully read data
-[2024-04-23 11:20:38,273] - 61  root - INFO- Exception occured in the initiate_data_transformation
