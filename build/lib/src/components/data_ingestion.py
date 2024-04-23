@@ -29,9 +29,11 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion Started")
         try:
+            # reading the data from th github
             data=pd.read_excel("https://github.com/prxdyu/test/raw/main/customer_data.xlsx",parse_dates=["DateTime"])
 
             logging.info("Reading Dataframe")
+            data["DateTime"]= pd.to_datetime(data["DateTime"])
 
             # creating the artifacts drectory
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)),exist_ok=True)

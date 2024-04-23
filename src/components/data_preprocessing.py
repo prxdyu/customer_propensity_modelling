@@ -121,9 +121,6 @@ class DataPreProcessing:
             data = pd.read_csv(df_path)
             logging.info("Successfully read data for modelling")
 
-            # dropping duplicates
-            data = data.drop_duplicates()
-
             # splitting data into dependent and independent variables
             y = data["Label"]
             x = data.drop(columns=["Label"])
@@ -153,6 +150,8 @@ class DataPreProcessing:
             save_object(file_path=self.data_preprocessing_config.preprocessor_path,
                         obj=preprocessor)
             logging.info("Succesfully saved preprocessor obj")
+
+            x_train.to_csv("artifacts/potta.csv",index=False)
 
             return (x_train,y_train,x_test,y_test)
             

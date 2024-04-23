@@ -4,7 +4,7 @@ import numpy as np
 
 from src.logger.logger import logging
 from src.exception.exception import CustomException 
-from src.utils.utils import save_object,get_rfm_features,assign_score,get_rfm_scores
+from src.utils.utils import get_rfm_features,get_rfm_scores
 
 import os
 import sys
@@ -20,7 +20,7 @@ class DataTransformationConfig:
     # defining the path for the user's RFM data
     users_rfm_data_file_path:str = os.path.join("artifacts","user_rfm_data.csv")
     # defining the path for the data with RFM features
-    data_with_rfm_features_file_path:str = os.path.join("artifacts","data_with_rfm_features.csv")
+    data_with_rfm_features_file_path:str = os.path.join("artifacts","raw_with_rfm_features.csv")
     
 
 class DataTransformation:
@@ -34,7 +34,7 @@ class DataTransformation:
         logging.info("Data Transformation is initiated")
         try:
             # reading the train and test data
-            df=pd.read_csv(df_path)
+            df=pd.read_csv(df_path,parse_dates=["DateTime"])
 
             logging.info("Successfully read data")
 
@@ -55,7 +55,7 @@ class DataTransformation:
             logging.info("Saved data with RFM features")
 
 
-            return df_rfm
+            return self.data_transformation_config.data_with_rfm_features_file_path
 
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")
@@ -65,4 +65,4 @@ class DataTransformation:
 
 if __name__=="__main__":
     obj=DataTransformation()
-    obj.initiate_data_transformation()
+    obj.initiate_data_transformation("artifacts/raw.csv")

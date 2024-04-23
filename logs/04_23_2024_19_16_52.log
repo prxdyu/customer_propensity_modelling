@@ -1,0 +1,28 @@
+[2024-04-23 19:16:53,323] - 160  numexpr.utils - INFO- NumExpr defaulting to 4 threads.
+[2024-04-23 19:16:59,212] - 30  root - INFO- Data Ingestion Started
+[2024-04-23 19:17:03,286] - 35  root - INFO- Reading Dataframe
+[2024-04-23 19:17:03,302] - 43  root - INFO- Saved the raw data in the artifacts folder
+[2024-04-23 19:17:03,317] - 51  root - INFO- Sucessfully done Basic Preporcessing (Filling NaN, eliminating duplicate categories)
+[2024-04-23 19:17:03,333] - 55  root - INFO- Data Ingestion Completed
+[2024-04-23 19:17:03,333] - 34  root - INFO- Data Transformation is initiated
+[2024-04-23 19:17:03,348] - 39  root - INFO- Successfully read data
+[2024-04-23 19:17:03,411] - 44  root - INFO- Succesfully Generated RFM Features and Scores for each user
+[2024-04-23 19:17:03,411] - 47  root - INFO- Saved the user's RFM data
+[2024-04-23 19:17:03,427] - 51  root - INFO- Succesfully added RFM Features for each users in data
+[2024-04-23 19:17:03,442] - 55  root - INFO- Saved data with RFM features
+[2024-04-23 19:17:03,442] - 33  root - INFO- Feature Engineering is initiated
+[2024-04-23 19:17:03,489] - 37  root - INFO- Successfully read data with RFM features
+[2024-04-23 19:17:03,489] - 41  root - INFO- Added date level features
+[2024-04-23 19:17:03,556] - 45  root - INFO- Successfully filtered dataset for training
+[2024-04-23 19:17:03,706] - 54  root - INFO- Added user level features
+[2024-04-23 19:17:03,821] - 66  root - INFO- Successfully completed Feature Engineering and saved the data for modelling
+[2024-04-23 19:17:03,821] - 118  root - INFO- Data Preprocessing is initiated
+[2024-04-23 19:17:03,852] - 122  root - INFO- Successfully read data for modelling
+[2024-04-23 19:17:03,852] - 133  root - INFO- Succesfully done train-test split
+[2024-04-23 19:17:03,852] - 139  root - INFO- Saved Train and Test Data
+[2024-04-23 19:17:03,957] - 150  root - INFO- Applied Transformations
+[2024-04-23 19:17:03,957] - 155  root - INFO- Succesfully saved preprocessor obj
+[2024-04-23 19:17:03,973] - 41  root - INFO- Model Fitting Started
+[2024-04-23 19:17:04,793] - 47  root - INFO- Model Report: {'Logistic Regression': 0.8148148148148148, 'Decision Tree': 0.2702702702702703, 'KNN': 0.8135593220338984, 'RF': 0.7142857142857143, 'GBDT': 0.6153846153846153, 'XGBoost': 0.64} 
+[2024-04-23 19:17:04,795] - 61  root - INFO- Best Model Found , Model Name : Logistic Regression , R2 Score : 0.8148148148148148
+[2024-04-23 19:17:04,796] - 36  root - INFO- Model Evaluation Initiated

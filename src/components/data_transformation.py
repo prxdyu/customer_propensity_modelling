@@ -55,7 +55,7 @@ class DataTransformation:
             logging.info("Saved data with RFM features")
 
 
-            return df_rfm
+            return self.data_transformation_config.data_with_rfm_features_file_path
 
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")

@@ -1,53 +1,55 @@
 Category,SubCategory,days_active,R,F,M,Loyalty,Avg Purchase Gap,add_to_cart_to_purchase_ratios,add_to_wishlist_to_purchase_ratios,click_wishlist_page_to_purchase_ratios,user_path,cart_to_purchase_ratios_category,cart_to_purchase_ratios_subcategory,wishlist_to_purchase_ratios_category,wishlist_to_purchase_ratios_subcategory,click_wishlist_to_purchase_ratios_category,click_wishlist_to_purchase_ratios_subcategory,product_view_to_purchase_ratios_category,product_view_to_purchase_ratios_subcategory,Label
-Software,K7 security,1,3.0,1.0,2.0,Silver,,1.0,,1.0,click_wishlist_page-->add_to_cart,1.0,1.0,,,1.5,1.0,3.0,,1
-Musical Instruments,Keyboard,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.6666666666666666,0.0,,,0.4,0.0,0.4,0.0,0
-Toys,Remote control car,1,,,,,,0.0,,0.0,others,0.7,0.0,,,1.75,0.0,0.7777777777777778,0.0,0
-Mobile & Accessories,Mobile,5,3.0,1.0,4.0,Gold,,1.0,1.0,1.0,others,0.9333333333333332,1.0,2.333333333333333,1.0,1.75,1.0,0.5384615384615384,0.2,0
-Gardern and Outdoor,Flower plant seed,5,2.0,4.0,3.0,Platinum,97.0,1.0,,2.0,read_reviews-->click_wishlist_page-->add_to_cart,0.75,1.0,,,1.5,1.0,1.2,,0
-Home Decor,Wall hangings,5,4.0,4.0,4.0,Platinum,7.0,0.6666666666666666,,2.0,others,0.5714285714285714,1.0,,,1.0,1.0,0.8,,0
-Tools and Utility,Multiutility plier,1,4.0,1.0,1.0,Silver,,1.0,,,add_to_cart,1.0,1.0,,,,,1.0,,1
-Entertainment Systems,Speakers,2,1.0,4.0,4.0,Platinum,50.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.8,0.5,,0.5,4.0,1.0,1.0,0.25,1
-Camera Accessories,Camera slider,1,,,,,,0.0,,0.0,read_reviews-->product_view-->click_wishlist_page-->add_to_cart,0.3,0.0,,,0.3,0.0,0.6,0.0,0
-Industrial,Scientific products,1,,,,,,0.0,,,search-->product_view-->read_reviews-->add_to_cart,0.0,0.0,,,0.0,,0.0,0.0,0
-Stationary,Pen stand,1,,,,,,0.0,,,others,0.6428571428571429,0.0,4.5,,1.125,,1.2857142857142858,0.0,0
-Mobile & Accessories,Bumpers,2,1.0,1.0,1.0,Bronze,,1.0,1.0,,search-->product_view-->read_reviews-->add_to_cart,0.9333333333333332,1.0,2.333333333333333,1.0,1.75,,0.5384615384615384,0.5,0
-Digital Devices,laptop,3,3.0,1.0,4.0,Gold,,1.0,0.5,,others,0.4375,1.0,1.4,0.5,0.6363636363636364,,0.7777777777777778,,1
-Kid's fashion,Kids shirt,1,,,,,,0.0,,,product_view-->read_reviews-->add_to_cart,0.25,0.0,,,,,0.3333333333333333,0.0,0
-Mobile & Accessories,Charging wire,1,3.0,1.0,2.0,Silver,,1.0,,,others,0.9333333333333332,1.0,2.333333333333333,3.0,1.75,,0.5384615384615384,0.75,1
-Kitchen Storage,Air Tight Container,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.6666666666666666,0.0,,,1.0,0.0,,,0
-Accessories,CD-Driver,1,3.0,1.0,2.0,Silver,,1.0,,1.0,search-->read_reviews-->click_wishlist_page-->add_to_cart,0.8,1.0,4.0,,0.8571428571428571,1.0,1.3333333333333333,,1
-Tv and Appliances,TV,5,1.0,1.0,4.0,Silver,,0.5,1.0,1.0,search-->product_view-->read_reviews-->add_to_cart,0.5,0.5,,,0.5,0.5,0.5,1.0,0
-Fitness,Shaker bottle,3,4.0,4.0,3.0,Platinum,71.5,1.0,,,search-->product_view-->read_reviews-->add_to_cart,1.0,1.0,9.0,,1.8,,1.5,,1
-Tablets,iPad,3,3.0,4.0,4.0,Platinum,173.0,1.0,2.0,2.0,others,1.0,1.0,,,,,0.6666666666666666,0.6666666666666666,1
-Digital Appliances,Laptop,7,3.0,4.0,4.0,Platinum,33.0,1.0,2.0,2.0,others,1.0,1.0,2.0,,2.0,,0.5,0.5,0
-Accessories,Watches,1,,,,,,0.0,,0.0,search-->product_view-->click_wishlist_page-->add_to_cart,0.8,1.0,4.0,1.3333333333333333,0.8571428571428571,1.3333333333333333,1.3333333333333333,1.0,0
-Accessories,Binoculars,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.8,0.0,4.0,,0.8571428571428571,0.0,1.3333333333333333,,0
-Health care appliances,Bp monitors,1,3.0,4.0,2.0,Platinum,0.0,1.0,2.0,2.0,others,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1
-Home Appliances,vaccum cleaner,1,2.0,1.0,3.0,Silver,,1.0,,1.0,others,0.75,1.0,,,1.5,1.0,0.75,1.0,1
-Fitness,Gloves,2,1.0,1.0,1.0,Bronze,,1.0,,1.0,search-->read_reviews-->click_wishlist_page-->add_to_cart,1.0,1.0,9.0,,1.8,1.0,1.5,,0
-Food essentials,Chocolates,1,2.0,1.0,1.0,Bronze,,1.0,,1.0,read_reviews-->click_wishlist_page-->add_to_cart,1.0,1.0,,,1.0,1.0,0.6666666666666666,,1
-Smart Wearables,Smart watches,1,3.0,1.0,4.0,Gold,,1.0,,1.0,click_wishlist_page-->add_to_cart,1.0,1.0,,,0.5,0.5,0.3333333333333333,0.5,1
-Accessories,Watches,4,4.0,4.0,3.0,Platinum,116.0,1.0,,2.0,others,0.8,1.0,4.0,1.3333333333333333,0.8571428571428571,1.3333333333333333,1.3333333333333333,1.0,0
-Gifts,Paintings small,2,1.0,1.0,1.0,Bronze,,0.5,,0.5,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.8333333333333334,0.0,5.0,,0.8333333333333334,0.0,0.8333333333333334,0.0,0
-School Supplies,School bags,1,2.0,1.0,3.0,Silver,,1.0,,1.0,read_reviews-->click_wishlist_page-->add_to_cart,1.0,1.0,,,1.0,1.0,,,1
-Grocery,Flour Bags,2,1.0,1.0,1.0,Bronze,,0.5,,0.5,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.6666666666666666,1.0,2.0,,0.6666666666666666,1.0,0.4,1.0,1
-Gardern and Outdoor,Pots,5,2.0,4.0,3.0,Platinum,97.0,1.0,,2.0,read_reviews-->click_wishlist_page-->add_to_cart,0.75,1.0,,,1.5,,1.2,,0
-Stationary,Diaries,1,3.0,1.0,1.0,Bronze,,1.0,,1.0,click_wishlist_page-->add_to_cart,0.6428571428571429,1.0,4.5,,1.125,1.0,1.2857142857142858,,1
 Accessories,Harddisk cover,1,1.0,1.0,2.0,Bronze,,1.0,,1.0,read_reviews-->click_wishlist_page-->add_to_cart,0.8,1.0,4.0,,0.8571428571428571,1.0,1.3333333333333333,,1
-Music,Amplifier,1,3.0,1.0,4.0,Gold,,1.0,,,add_to_cart,1.0,1.0,,,,,,,1
-Men's Top Wear,Blazer,1,,,,,,0.0,,,search-->product_view-->read_reviews-->add_to_cart,0.0,0.0,,,,,0.0,0.0,0
-Entertainment Systems,Surround system,2,1.0,4.0,4.0,Platinum,50.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.8,1.0,,,4.0,,1.0,1.5,1
-Electronics,Electrical wires,1,4.0,1.0,1.0,Silver,,1.0,,1.0,others,0.6666666666666666,1.0,,,1.0,1.0,1.0,1.0,1
-Software,McAfee Protection,1,3.0,1.0,2.0,Silver,,1.0,,,product_view-->read_reviews-->add_to_cart,1.0,1.0,,,1.5,,3.0,1.0,1
-Men's Grooming,Beard Oil,1,4.0,1.0,2.0,Gold,,1.0,,,others,1.0,1.0,,,,,1.0,1.0,1
-Home Decor,Wall shelves,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.5714285714285714,0.0,,,1.0,0.0,0.8,0.0,0
-Baby Products,wipes,1,3.0,1.0,1.0,Bronze,,1.0,,1.0,others,0.5,1.0,,,0.25,1.0,0.3333333333333333,,1
-Men's Fashion,Shirts,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.8,0.5,,,2.0,0.5,0.6153846153846154,0.3333333333333333,0
+Musical Instruments,Violin string,1,4.0,1.0,1.0,Silver,,1.0,,1.0,click_wishlist_page-->add_to_cart,0.6666666666666666,1.0,1.0,,0.4,1.0,0.4,,1
+Accessories,Watches,6,1.0,4.0,4.0,Platinum,43.0,1.0,1.0,1.0,others,0.8,1.0,4.0,1.3333333333333333,0.8571428571428571,1.3333333333333333,1.3333333333333333,1.0,1
+Health care appliances,Bp monitors,1,3.0,4.0,2.0,Platinum,0.0,1.0,2.0,2.0,others,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1
+Women's Fashion,Makeup kit,1,,,,,,0.0,,,search-->product_view-->read_reviews-->add_to_cart,0.7142857142857143,0.0,2.5,,1.25,,0.8333333333333334,0.0,0
+Accessories,Bracelets,3,2.0,1.0,1.0,Bronze,,0.5,,,search-->product_view-->read_reviews-->add_to_cart,0.8,1.0,4.0,,0.8571428571428571,,1.3333333333333333,1.0,0
 Digital Content,eBook,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.0,0.0,,,0.0,0.0,0.0,0.0,0
-Women's Fashion,Tops,5,3.0,4.0,3.0,Platinum,68.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.7142857142857143,1.3333333333333333,2.5,4.0,1.25,4.0,0.8333333333333334,1.0,0
-Smart Home Automation,Smart switches,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.0,0.0,,,0.0,0.0,0.0,0.0,0
-Pet Supplies,Cat food,2,4.0,4.0,2.0,Platinum,5.0,1.0,,,others,0.3333333333333333,0.6666666666666666,,,1.0,2.0,0.25,0.6666666666666666,1
-Digital Appliances,Monitor,7,3.0,4.0,4.0,Platinum,33.0,1.0,2.0,2.0,others,1.0,1.0,2.0,1.0,2.0,1.0,0.5,0.5,0
-Health,Blood pressure monitor,3,4.0,4.0,2.0,Platinum,190.0,1.0,,2.0,others,1.0,1.0,,,1.0,1.0,1.0,1.0,0
-Food essentials,Oil containers,2,4.0,4.0,2.0,Platinum,5.0,1.0,,,others,1.0,1.0,,,1.0,,0.6666666666666666,0.5,1
-Car Accessories,Car freshner,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.5,0.0,,,2.0,0.0,1.0,0.0,0
+Electronics,Weighing scale,1,2.0,1.0,3.0,Silver,,1.0,,,add_to_cart,0.6666666666666666,1.0,,,1.0,,1.0,,1
+Gardern and Outdoor,Flower plant seed,5,2.0,4.0,3.0,Platinum,97.0,1.0,,2.0,read_reviews-->click_wishlist_page-->add_to_cart,0.75,1.0,,,1.5,1.0,1.2,,0
+Seasonal Appliances,Air coolers,1,2.0,1.0,3.0,Silver,,1.0,,1.0,click_wishlist_page-->add_to_cart,1.0,1.0,,,1.0,1.0,,,1
+Software,K7 security,1,3.0,1.0,2.0,Silver,,1.0,,1.0,click_wishlist_page-->add_to_cart,1.0,1.0,,,1.5,1.0,3.0,,1
+Camera Accessories,Gimbles,1,,,,,,0.0,,0.0,others,0.3,0.0,,,0.3,0.0,0.6,,0
+Home furnishing,Blankets,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.5,0.0,,,0.3333333333333333,0.0,0.5,,0
+Mobile & Accessories,Skins for mobile,1,,,,,,0.0,,0.0,read_reviews-->product_view-->click_wishlist_page-->add_to_cart,0.9333333333333332,0.0,2.333333333333333,,1.75,0.0,0.5384615384615384,0.0,0
+Artwork,Handcrafted idol,1,,,,,,0.0,,0.0,others,0.0,0.0,,,0.0,0.0,0.0,,0
+Entertainment Systems,Audio Speakers,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.8,0.0,,,4.0,0.0,1.0,,0
+Tv and Appliances,TV,3,4.0,1.0,4.0,Platinum,,1.0,,1.0,read_reviews-->click_wishlist_page-->add_to_cart,0.5,0.5,,,0.5,0.5,0.5,1.0,1
+Storage,External harddrive,1,2.0,1.0,3.0,Silver,,1.0,,,read_reviews-->add_to_cart,2.0,1.0,,,,,2.0,,1
+Accessories,Bracelet,1,,,,,,0.0,,0.0,search-->product_view-->click_wishlist_page-->add_to_cart,0.8,0.0,4.0,,0.8571428571428571,0.0,1.3333333333333333,0.0,0
+Footwear,sandals,1,2.0,1.0,2.0,Bronze,,1.0,,,add_to_cart,1.3333333333333333,1.0,,,2.0,,1.0,,1
+Home Decor,Wall hangings,5,4.0,4.0,4.0,Platinum,7.0,0.6666666666666666,,2.0,others,0.5714285714285714,1.0,,,1.0,1.0,0.8,,0
+Mobile & Accessories,Mobile,5,3.0,1.0,4.0,Gold,,1.0,1.0,1.0,others,0.9333333333333332,1.0,2.333333333333333,1.0,1.75,1.0,0.5384615384615384,0.2,0
+Entertainment Systems,Speakers,2,1.0,4.0,4.0,Platinum,50.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.8,0.5,,0.5,4.0,1.0,1.0,0.25,1
+Accessories,CD-Driver,1,3.0,1.0,2.0,Silver,,1.0,,1.0,search-->read_reviews-->click_wishlist_page-->add_to_cart,0.8,1.0,4.0,,0.8571428571428571,1.0,1.3333333333333333,,1
+Motorbike Accessories,Rear lamp,1,,,,,,0.0,,,product_view-->read_reviews-->add_to_cart,0.0,0.0,,,0.0,,0.0,0.0,0
+Mobile & Accessories,Charging wire,1,3.0,1.0,2.0,Silver,,1.0,,,others,0.9333333333333332,1.0,2.333333333333333,3.0,1.75,,0.5384615384615384,0.75,1
+Fitness,Gloves,2,1.0,1.0,1.0,Bronze,,1.0,,1.0,search-->read_reviews-->click_wishlist_page-->add_to_cart,1.0,1.0,9.0,,1.8,1.0,1.5,,0
+Baby Care,Diapers,2,2.0,4.0,3.0,Platinum,0.0,1.0,2.0,2.0,others,0.3333333333333333,1.0,1.0,1.0,0.25,1.0,0.3333333333333333,1.0,0
+Kitchen and dining,Dinner set,1,4.0,1.0,1.0,Silver,,1.0,,1.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.5,1.0,,,0.5,1.0,0.5,1.0,1
+Women's Fashion,Ethinc dresses,1,2.0,1.0,4.0,Gold,,1.0,,,add_to_cart,0.7142857142857143,1.0,2.5,,1.25,,0.8333333333333334,,1
+Toys,Barbie doll,2,3.0,4.0,3.0,Platinum,105.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.7,1.0,,,1.75,,0.7777777777777778,1.0,1
+Personal Safety,Fire extinguisher mini,1,4.0,1.0,2.0,Gold,,1.0,,,add_to_cart,2.0,1.0,,,2.0,,2.0,,1
+Women Fashion,Party wear,1,4.0,1.0,3.0,Gold,,1.0,,,product_view-->read_reviews-->add_to_cart,1.0,1.0,1.0,,3.0,,0.5,1.0,1
+Accessories,Binoculars,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.8,0.0,4.0,,0.8571428571428571,0.0,1.3333333333333333,,0
+Digital Appliances,Laptop,7,3.0,4.0,4.0,Platinum,33.0,1.0,2.0,2.0,others,1.0,1.0,2.0,,2.0,,0.5,0.5,0
+Living room,Lamps,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.0,0.0,,,0.0,0.0,0.0,,0
+Home Appliances,Vaccum cleaner,1,4.0,1.0,3.0,Gold,,1.0,,,others,0.75,1.0,,,1.5,,0.75,1.0,1
+Women's Fashion,Tops,1,1.0,1.0,2.0,Bronze,,1.0,,,add_to_cart,0.7142857142857143,1.3333333333333333,2.5,4.0,1.25,4.0,0.8333333333333334,1.0,1
+Digital Devices,laptop,3,3.0,1.0,4.0,Gold,,1.0,0.5,,others,0.4375,1.0,1.4,0.5,0.6363636363636364,,0.7777777777777778,,1
+Laptops,Notebooks,1,3.0,1.0,4.0,Gold,,1.0,,,add_to_cart,1.0,1.0,,,,,,,1
+"Music
+",Cd's,1,3.0,1.0,1.0,Bronze,,1.0,,,read_reviews-->add_to_cart,1.0,2.0,,,,,1.0,,1
+Computer Peripherals,Barcode scanners,1,,,,,,0.0,,0.0,read_reviews-->click_wishlist_page-->add_to_cart,0.5,0.0,,,0.3333333333333333,0.0,0.5,,0
+Kitchen Appliances,Wet grinders,3,4.0,4.0,3.0,Platinum,37.0,1.0,2.0,2.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.3333333333333333,1.0,1.0,1.0,0.5,1.0,0.1666666666666666,0.5,0
+Gardern and Outdoor,Pots,5,2.0,4.0,3.0,Platinum,97.0,1.0,,2.0,read_reviews-->click_wishlist_page-->add_to_cart,0.75,1.0,,,1.5,,1.2,,0
+Toys,Squeeze toy,3,2.0,1.0,1.0,Bronze,,0.5,,,search-->product_view-->read_reviews-->add_to_cart,0.7,0.0,,,1.75,,0.7777777777777778,,0
+Accessories,Frames,1,2.0,1.0,1.0,Bronze,,1.0,,1.0,read_reviews-->click_wishlist_page-->add_to_cart,0.8,1.0,4.0,,0.8571428571428571,1.0,1.3333333333333333,,1
+Toys,Toy car,2,2.0,4.0,3.0,Platinum,0.0,1.0,2.0,2.0,others,0.7,1.0,,,1.75,,0.7777777777777778,1.0,1
+Stationary,Pens,3,4.0,4.0,3.0,Platinum,37.0,1.0,2.0,2.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.6428571428571429,1.0,4.5,,1.125,,1.2857142857142858,1.0,1
+Entertainment Systems,Surround system,2,1.0,4.0,4.0,Platinum,50.0,1.0,,,search-->product_view-->read_reviews-->add_to_cart,0.8,1.0,,,4.0,,1.0,1.5,1
+Bed room,Side table,3,2.0,4.0,4.0,Platinum,200.0,1.0,2.0,2.0,others,1.25,1.0,5.0,,2.5,,1.25,,1
+Living room,Office tables,1,,,,,,0.0,,0.0,product_view-->read_reviews-->click_wishlist_page-->add_to_cart,0.0,0.0,,,0.0,0.0,0.0,0.0,0
+Software,McAfee Protection,1,3.0,1.0,2.0,Silver,,1.0,,,product_view-->read_reviews-->add_to_cart,1.0,1.0,,,1.5,,3.0,1.0,1
+Mobile & Accessories,Tablet holder,1,3.0,1.0,3.0,Gold,,1.0,,,others,0.9333333333333332,1.0,2.333333333333333,,1.75,,0.5384615384615384,1.0,1

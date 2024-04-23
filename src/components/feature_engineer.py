@@ -18,7 +18,7 @@ sys.path.insert(0, 'src')
 @dataclass
 class FeatureEngineeringConfig:
     # defining the path for the data with engineered features
-    data_with_engineered_features:str = os.path.join("artifacts","engineered_features_data.csv")
+    modelling_data_path:str = os.path.join("artifacts","modelling_data.csv")
     
 
 class FeatureEngineering:
@@ -62,11 +62,11 @@ class FeatureEngineering:
 
 
             # saving the data with engineered features for modelling
-            df_base.to_csv("artifacts/modelling_data.csv",index=False)
+            df_base.to_csv(self.feature_engineering_config.modelling_data_path,index=False)
             logging.info("Successfully completed Feature Engineering and saved the data for modelling")
 
 
-            return None
+            return self.feature_engineering_config.modelling_data_path
 
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")

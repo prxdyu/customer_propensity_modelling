@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Studies/Data%20Science/ProjectPro%20Projects/Customer%20Propensity%20Model/mlruns/0/c5623d342d654515947c88b72f63fce7/artifacts
+end_time: 1713882932590
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c5623d342d654515947c88b72f63fce7
+run_name: crawling-fawn-821
+run_uuid: c5623d342d654515947c88b72f63fce7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713882916285
+status: 3
+tags: []
+user_id: Pradyu

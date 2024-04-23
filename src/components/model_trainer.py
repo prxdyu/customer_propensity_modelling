@@ -66,7 +66,7 @@ class ModelTrainer:
             )
 
         except Exception as e:
-            logging.info("Exception occured in the initiate_data_transformation")
+            logging.info("Exception occured in the Model Training")
             raise CustomException(e,sys)
         
 
