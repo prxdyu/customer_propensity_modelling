@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Studies/Data%20Science/ProjectPro%20Projects/Customer%20Propensity%20Model/mlruns/0/8f445975938e45c3acb324ad32250d14/artifacts
+end_time: 1713883096876
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f445975938e45c3acb324ad32250d14
+run_name: stately-conch-75
+run_uuid: 8f445975938e45c3acb324ad32250d14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713883086011
+status: 3
+tags: []
+user_id: Pradyu

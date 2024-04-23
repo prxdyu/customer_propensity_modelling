@@ -121,9 +121,6 @@ class DataPreProcessing:
             data = pd.read_csv(df_path)
             logging.info("Successfully read data for modelling")
 
-            # dropping duplicates
-            data = data.drop_duplicates()
-
             # splitting data into dependent and independent variables
             y = data["Label"]
             x = data.drop(columns=["Label"])
@@ -132,11 +129,6 @@ class DataPreProcessing:
             x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=42)
             logging.info("Succesfully done train-test split")
 
-            train_data = pd.concat([x_train, y_train], axis=1)
-            train_data.to_csv(self.data_preprocessing_config.train_path,index=False)
-            test_data =  pd.concat([x_test, y_test], axis=1)
-            test_data.to_csv(self.data_preprocessing_config.test_path,index=False)
-            logging.info("Saved Train and Test Data")
 
 
             """ PREPROCESSING """
@@ -154,11 +146,9 @@ class DataPreProcessing:
                         obj=preprocessor)
             logging.info("Succesfully saved preprocessor obj")
 
+
             return (x_train,y_train,x_test,y_test)
             
-
-
-        
 
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")

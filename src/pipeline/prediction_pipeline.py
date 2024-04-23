@@ -36,40 +36,72 @@ class PredictionPipeline:
 
 class CustomData:
 
-   def __init__(self,
-                 carat:float,
-                 depth:float,
-                 table:float,
-                 x:float,
-                 y:float,
-                 z:float,
-                 cut:str,
-                 color:str,
-                 clarity:str):
-        
-        self.carat=carat
-        self.depth=depth
-        self.table=table
-        self.x=x
-        self.y=y
-        self.z=z
-        self.cut = cut
-        self.color = color
-        self.clarity = clarity
-        
+   def __init__(self,Category:str,
+                 SubCategory:str,
+                 days_active:int,
+                 R:int,
+                 F:int,
+                 M:int,
+                 Loyalty:str,
+                 AvgPurchaseGap:int,
+                 add_to_cart_to_purchase_ratios:float,
+                 add_to_wishlist_to_purchase_ratios:float,
+                 click_wishlist_page_to_purchase_ratios:float,
+                 user_path:str,
+                 cart_to_purchase_ratios_category:float,
+                 cart_to_purchase_ratios_subcategory:float,
+                 wishlist_to_purchase_ratios_category:float,
+                 wishlist_to_purchase_ratios_subcategory:float,
+                 click_wishlist_to_purchase_ratios_category:float,
+                 click_wishlist_to_purchase_ratios_subcategory:float,
+                 product_view_to_purchase_ratios_category:float,
+                 product_view_to_purchase_ratios_subcategory:float
+                 ):
+        self.category = Category
+        self.subcategory = SubCategory
+        self.days_active = days_active
+        self.R=R
+        self.F=F
+        self.M=M
+        self.loyalty=Loyalty
+        self.avg_purchase_gap=AvgPurchaseGap
+        self.add_to_cart_to_purchase_ratios=add_to_cart_to_purchase_ratios
+        self.add_to_wishlist_to_purchase_ratios=add_to_wishlist_to_purchase_ratios
+        self.click_wishlist_page_to_purchase_ratios=click_wishlist_page_to_purchase_ratios
+        self.user_path=user_path
+        self.cart_to_purchase_ratios_category=cart_to_purchase_ratios_category
+        self.cart_to_purchase_ratios_subcategory=cart_to_purchase_ratios_subcategory
+        self.wishlist_to_purchase_ratios_category=wishlist_to_purchase_ratios_category
+        self.wishlist_to_purchase_ratios_subcategory=wishlist_to_purchase_ratios_subcategory
+        self.click_wishlist_to_purchase_ratios_category=click_wishlist_to_purchase_ratios_category
+        self.click_wishlist_to_purchase_ratios_subcategory=click_wishlist_to_purchase_ratios_subcategory
+        self.product_view_to_purchase_ratios_category=product_view_to_purchase_ratios_category
+        self.product_view_to_purchase_ratios_subcategory=product_view_to_purchase_ratios_subcategory
+
+
 
    def get_data_as_df(self):
         try:
             custom_data_input_dict = {
-                'carat':[self.carat],
-                'depth':[self.depth],
-                'table':[self.table],
-                'x':[self.x],
-                'y':[self.y],
-                'z':[self.z],
-                'cut':[self.cut],
-                'color':[self.color],
-                'clarity':[self.clarity]
+                'category':[self.category],
+                'subcategory':[self.subcategory],
+                'days_active':[self.days_active],
+                'R':[self.R],
+                'F':[self.F],
+                'M':[self.M],
+                'loyalty':[self.loyalty],
+                'avg_purchase_gap':[self.avg_purchase_gap],
+                'add_to_cart_to_purchase_ratios':[self.add_to_cart_to_purchase_ratios],
+                'click_wishlist_page_to_purchase_ratios':[self.click_wishlist_page_to_purchase_ratios],
+                'user_path':[self.user_path],
+                'cart_to_purchase_ratios_category':[self.cart_to_purchase_ratios_category],
+                'cart_to_purchase_ratios_subcategory':[self.cart_to_purchase_ratios_subcategory],
+                'wishlist_to_purchase_ratios_category':[self.wishlist_to_purchase_ratios_category],
+                'wishlist_to_purchase_ratios_subcategory':[self.wishlist_to_purchase_ratios_subcategory],
+                'click_wishlist_to_purchase_ratios_category':[self.click_wishlist_to_purchase_ratios_category],
+                'click_wishlist_to_purchase_ratios_subcategory':[self.click_wishlist_to_purchase_ratios_subcategory],
+                'product_view_to_purchase_ratios_category':[self.product_view_to_purchase_ratios_category],
+                'product_view_to_purchase_ratios_subcategory':[self.product_view_to_purchase_ratios_subcategory],
                 }
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe Gathered')
