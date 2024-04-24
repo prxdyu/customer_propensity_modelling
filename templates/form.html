@@ -1,73 +1,132 @@
 <html>
 <body>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
-    <div class="form-group">
-        <label for="carat">Carat:</label>
-        <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
-    </div>
+
+  <div class="form-group">
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+        <option value="" disabled selected>Choose a category value</option>
+        {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+    </select>
+  </div>
+
 
     <div class="form-group">
-        <label for="depth">Depth:</label>
-        <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
+      <label for="subcategory">Sub Category:</label>
+        <select id="subcategory" name="subcategory">
+          <option value="" disabled selected>Choose a sub-category value</option>
+          {% for subcategory in subcategories %}
+          <option value="{{ category }}">{{ subcategory }}</option>
+          {% endfor %}
+        </select>
     </div>
 
     <div class="form-group">  
-        <label for="table">Table:</label>
-        <input type="text" id="table" name="table" placeholder="Enter table value (float)">
+      <label for="days_active">Days Active</label>
+      <input type="text" id="days_active" name="days_active" placeholder="No of Days Active">
+  </div>
+
+    <div class="form-group">  
+        <label for="R">Recency</label>
+        <input type="text" id="R" name="R" placeholder="Enter R value (float)">
     </div>
     
-    <div class="form-group">
-        <label for="x">x:</label>
-        <input type="text" id="x" name="x" placeholder="Enter x value (float)">
+    <div class="form-group">  
+      <label for="F">Frequency:</label>
+      <input type="text" id="F" name="F" placeholder="Enter F value (float)">
     </div>
   
-    <div class="form-group">
-        <label for="y">y:</label>
-        <input type="text" id="y" name="y" placeholder="Enter y value (float)">
+    <div class="form-group">  
+      <label for="M">Monetary:</label>
+      <input type="text" id="M" name="M" placeholder="Enter M value (float)">
     </div>
-  
-    <div class="form-group">
-        <label for="z">z:</label>
-        <input type="text" id="z" name="z" placeholder="Enter z value (float)">
-    </div>         
-  
-<div class="form-group">
-  <label for="cut">Cut:</label>
-  <select id="cut" name="cut">
-    <option value="Fair">Fair</option>
-    <option value="Good">Good</option>
-    <option value="Very Good">Very Good</option>
-    <option value="Premium">Premium</option>
-    <option value="Ideal">Ideal</option>
-  </select>
-</div>
-  
-<div class="form-group">
-  <label for="color">Color:</label>
-  <select id="color" name="color">
-    <option value="D">D</option>
-    <option value="E">E</option>
-    <option value="F">F</option>
-    <option value="G">G</option>
-    <option value="H">H</option>
-    <option value="I">I</option>
-    <option value="J">J</option>
-  </select>
-</div>
 
-<div class="form-group">
-  <label for="clarity">Clarity:</label>
-  <select id="clarity" name="clarity">
-    <option value="I1">I1</option>
-    <option value="SI2">SI2</option>
-    <option value="SI1">SI1</option>
-    <option value="VS2">VS2</option>
-    <option value="VS1">VS1</option>
-    <option value="VVS2">VVS2</option>
-    <option value="VVS1">VVS1</option>
-    <option value="IF">IF</option>
-  </select>
-</div>
+    <div class="form-group">
+      <label for="loyalty">Loyalty:</label>
+      <select id="loyalty" name="loyalty">
+          <option value="" disabled selected>Choose Loyalty </option>
+          {% for loyalty in loyalties %}
+          <option value="{{ loyalty }}">{{ loyalty }}</option>
+          {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="AvgPurchaseGap">Avg Purchase Gap:</label>
+        <input type="text" id="AvgPurchaseGap" name="AvgPurchaseGap" placeholder="Enter Avg Purchase Gap (float)">
+    </div>  
+    
+    <div class="form-group">
+      <label for="add_to_cart_to_purchase_ratios">Cart to Purchase Ratio:</label>
+      <input type="text" id="add_to_cart_to_purchase_ratios" name="add_to_cart_to_purchase_ratios" placeholder="Cart to Purchase Ratio">
+    </div> 
+
+  <div class="form-group">
+    <label for="add_to_wishlist_to_purchase_ratios">Wishlist to Purchase Ratio:</label>
+    <input type="text" id="add_to_wishlist_to_purchase_ratios" name="add_to_wishlist_to_purchase_ratios" placeholder="Wishlist to Purchase Ratio">
+  </div> 
+
+  <div class="form-group">
+    <label for="click_wishlist_page_to_purchase_ratios">Click Wishlist to Purchase Ratio:</label>
+    <input type="text" id="click_wishlist_page_to_purchase_ratios" name="click_wishlist_page_to_purchase_ratios" placeholder="Click Wishlist to Purchase Ratio">
+  </div> 
+
+  <div class="form-group">
+    <label for="path">Path:</label>
+    <select id="path" name="path">
+        <option value="" disabled selected>Choose Path </option>
+        {% for path in paths %}
+        <option value="{{ path }}">{{ path }}</option>
+        {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="cart_to_purchase_ratios_category">Cart to Purchase Ratio (Category):</label>
+    <input type="text" id="cart_to_purchase_ratios_category" name="cart_to_purchase_ratios_category" placeholder="Cart to Purchase Ratio (Category)">
+  </div> 
+
+  <div class="form-group">
+    <label for="cart_to_purchase_ratios_subcategory">Cart to Purchase Ratio (SubCategory):</label>
+    <input type="text" id="cart_to_purchase_ratios_subcategory" name="cart_to_purchase_ratios_subcategory" placeholder="Cart to Purchase Ratio (SubCategory)">
+  </div> 
+
+  <div class="form-group">
+    <label for="wishlist_to_purchase_ratios_category">Wishlist to Purchase Ratio (Category):</label>
+    <input type="text" id="wishlist_to_purchase_ratios_category" name="wishlist_to_purchase_ratios_category" placeholder="Wishlist to Purchase Ratio (Category)">
+  </div> 
+
+  <div class="form-group">
+    <label for="wishlist_to_purchase_ratios_subcategory">Wishlist to Purchase Ratio (SubCategory):</label>
+    <input type="text" id="wishlist_to_purchase_ratios_subcategory" name="wishlist_to_purchase_ratios_subcategory" placeholder="Wishlist to Purchase Ratio (SubCategory)">
+  </div>
+
+  <div class="form-group">
+    <label for="click_wishlist_to_purchase_ratios_category">Click Wishlist to Purchase Ratio ( Category):</label>
+    <input type="text" id="click_wishlist_to_purchase_ratios_category" name="click_wishlist_to_purchase_ratios_category" placeholder="Click Wishlist to Purchase Ratio ( Category)">
+  </div>
+
+  <div class="form-group">
+    <label for="click_wishlist_to_purchase_ratios_subcategory">Click Wishlist to Purchase Ratio (SubCategory):</label>
+    <input type="text" id="click_wishlist_to_purchase_ratios_subcategory" name="click_wishlist_to_purchase_ratios_subcategory" placeholder="Click Wishlist to Purchase Ratio (SubCategory)">
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="product_view_to_purchase_ratios_category">View to Purchase Ratio (Category):</label>
+    <input type="text" id="product_view_to_purchase_ratios_category" name="product_view_to_purchase_ratios_category" placeholder="View to Purchase Ratio (Category)">
+  </div>
+
+  <div class="form-group">
+    <label for="product_view_to_purchase_ratios_subcategory">View to Purchase Ratio (SubCategory):</label>
+    <input type="text" id="product_view_to_purchase_ratios_subcategory" name="product_view_to_purchase_ratios_subcategory" placeholder="View to Purchase Ratio (SubCategory)">
+  </div>
+
+  
+
 
 <div style="clear:both;"></div>
   <input type="submit" value="Submit">

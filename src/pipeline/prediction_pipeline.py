@@ -25,7 +25,7 @@ class PredictionPipeline:
             # pre-processing the features
             scaled_features = preprocessor.transform(features)
             # prediction
-            prediction = model.predict(scaled_features)
+            prediction = model.predict_proba(scaled_features)[:,1]
 
             return prediction
 
@@ -36,7 +36,8 @@ class PredictionPipeline:
 
 class CustomData:
 
-   def __init__(self,Category:str,
+   def __init__( self,
+                 Category:str,
                  SubCategory:str,
                  days_active:int,
                  R:int,
@@ -83,28 +84,30 @@ class CustomData:
    def get_data_as_df(self):
         try:
             custom_data_input_dict = {
-                'category':[self.category],
-                'subcategory':[self.subcategory],
-                'days_active':[self.days_active],
-                'R':[self.R],
-                'F':[self.F],
-                'M':[self.M],
-                'loyalty':[self.loyalty],
-                'avg_purchase_gap':[self.avg_purchase_gap],
-                'add_to_cart_to_purchase_ratios':[self.add_to_cart_to_purchase_ratios],
-                'click_wishlist_page_to_purchase_ratios':[self.click_wishlist_page_to_purchase_ratios],
-                'user_path':[self.user_path],
-                'cart_to_purchase_ratios_category':[self.cart_to_purchase_ratios_category],
-                'cart_to_purchase_ratios_subcategory':[self.cart_to_purchase_ratios_subcategory],
-                'wishlist_to_purchase_ratios_category':[self.wishlist_to_purchase_ratios_category],
-                'wishlist_to_purchase_ratios_subcategory':[self.wishlist_to_purchase_ratios_subcategory],
-                'click_wishlist_to_purchase_ratios_category':[self.click_wishlist_to_purchase_ratios_category],
-                'click_wishlist_to_purchase_ratios_subcategory':[self.click_wishlist_to_purchase_ratios_subcategory],
-                'product_view_to_purchase_ratios_category':[self.product_view_to_purchase_ratios_category],
-                'product_view_to_purchase_ratios_subcategory':[self.product_view_to_purchase_ratios_subcategory],
-                }
+            'Category': [self.category],
+            'SubCategory': [self.subcategory],
+            'days_active': [self.days_active],
+            'R': [self.R],
+            'F': [self.F],
+            'M': [self.M],
+            'Loyalty': [self.loyalty],
+            'Avg Purchase Gap': [self.avg_purchase_gap],
+            'add_to_cart_to_purchase_ratios': [self.add_to_cart_to_purchase_ratios],
+            'add_to_wishlist_to_purchase_ratios':[self.add_to_wishlist_to_purchase_ratios],
+            'click_wishlist_page_to_purchase_ratios': [self.click_wishlist_page_to_purchase_ratios],
+            'user_path': [self.user_path],
+            'cart_to_purchase_ratios_category': [self.cart_to_purchase_ratios_category],
+            'cart_to_purchase_ratios_subcategory': [self.cart_to_purchase_ratios_subcategory],
+            'wishlist_to_purchase_ratios_category': [self.wishlist_to_purchase_ratios_category],
+            'wishlist_to_purchase_ratios_subcategory': [self.wishlist_to_purchase_ratios_subcategory],
+            'click_wishlist_to_purchase_ratios_category': [self.click_wishlist_to_purchase_ratios_category],
+            'click_wishlist_to_purchase_ratios_subcategory': [self.click_wishlist_to_purchase_ratios_subcategory],
+            'product_view_to_purchase_ratios_category': [self.product_view_to_purchase_ratios_category],
+            'product_view_to_purchase_ratios_subcategory': [self.product_view_to_purchase_ratios_subcategory],
+            }
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe Gathered')
+            logging.info(f"The cols are{df.columns}")
             return df
         except Exception as e:
             logging.info('Exception Occured in prediction pipeline')
