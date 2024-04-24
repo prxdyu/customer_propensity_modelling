@@ -14,6 +14,6 @@ conda activate ./env
 
 # installing the dev requirements
 echo [$(date)] : "Installing the requirements"
-pip install -r requirements.txt
+pip install -r requirements_dev.txt
 
 echo [$(date)] : "END"

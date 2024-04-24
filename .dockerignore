@@ -3,3 +3,12 @@ __pycache__
 logs
 test.py
 env
+.github
+logs
+notebooks
+mlruns
+artifacts/raw.csv
+artifacts/raw_processed.csv
+artifacts/tester.ipynb
+artifacts/user_rfm_data.csv
+

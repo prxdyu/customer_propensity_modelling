@@ -1,5 +1,5 @@
 # "Python 3.8 slim buster" is a Docker image that provides a lightweight and minimalistic environment for running Python 3.8 applications, based on the Debian Buster operating system.
-FROM python:3.8-slim-buster
+FROM python:3.8-slim
 
 # creating a new  directory 
 RUN mkdir /app
