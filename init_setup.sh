@@ -13,7 +13,7 @@ echo [$(date)] : "Activating the environment "
 source activate ./env
 
 # installing the dev requirements
-echo [$(date)] : "Installing the Dev requirements"
-pip install -r requirements_dev.txt
+echo [$(date)] : "Installing the requirements"
+pip install -r requirements.txt
 
 echo [$(date)] : "END"

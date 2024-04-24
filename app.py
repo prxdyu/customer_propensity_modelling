@@ -9,6 +9,11 @@ app=Flask(__name__)
 def home_page():
     return render_template("index.html")
 
+# for testing purpose
+@app.route("/ping",methods=['GET'])
+def ping():
+    return "Success"
+
 @app.route("/predict",methods=["GET","POST"])
 def predict_datapoint():
     if request.method=="GET":
@@ -49,10 +54,11 @@ def predict_datapoint():
             product_view_to_purchase_ratios_subcategory = request.form.get("product_view_to_purchase_ratios_subcategory")
             
             )
+        # converting the response into a dataframe
         final_data=data.get_data_as_df()
-
+        # calling the inference pipeline for prediction
         predict_pipeline=PredictionPipeline()
-
+        # doing prediction
         pred=predict_pipeline.predict(final_data)
 
         result=round(pred[0],2)
