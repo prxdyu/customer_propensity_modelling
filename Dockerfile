@@ -1,18 +1,32 @@
-# "Python 3.8 slim buster" is a Docker image that provides a lightweight and minimalistic environment for running Python 3.8 applications, based on the Debian Buster operating system.
-FROM python:3.8-slim
 
-# creating a new  directory 
-RUN mkdir /app
+# Building Docker image using multi-stage strategy to reduce image size
 
-# making it as our working directory
+# First stage: Install dependencies
+FROM python:3.8-slim-buster AS builder
+
+# Set working directory
+WORKDIR /install
+
+# Copy only requirements file first to leverage Docker cache
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+# Second stage: Create the final image
+FROM python:3.8-slim-buster
+
+# Set working directory
 WORKDIR /app
 
-# copying everything from current directory to working directory
-COPY . /app/
+# Copy installed dependencies from the builder stage
+COPY --from=builder /install /usr/local
 
-# installing dependencies
-RUN pip3 install -r requirements.txt
+# Copy the rest of the application
+COPY . .
 
-CMD flask run -h 0.0.0.0 -p 5000
+# Cleanup unnecessary files if any
+RUN rm -rf /var/lib/apt/lists/*
 
-
+# Command to run the application
+CMD ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]

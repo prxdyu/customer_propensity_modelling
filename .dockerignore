@@ -11,4 +11,7 @@ artifacts/raw.csv
 artifacts/raw_processed.csv
 artifacts/tester.ipynb
 artifacts/user_rfm_data.csv
+requirements_dev.txt
+test.py
+init_setup.sh
 
