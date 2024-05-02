@@ -1,5 +1,5 @@
 # defining the name of the workflow (Containerizing the Image and deploying it to ECS) ==> Continuous Delivery
-name: Deploy to Amazon ECS
+name: Deploy to Amazon EC2
 
 # specifying this workflow will get triggered if we push anything to the main branch
 on:
@@ -79,6 +79,27 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Deploy docker image from ECR to EC2 instance
+        envs:
+          ECR_REPOSITORY: propensity_flask_app
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRETE_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          SERVER_PUBLIC_IP: 54.164.155.94.
+
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{env.SERVER_PUBLIC_IP}}
+          username: ec2-user
+          key: ${{secrets.PRIVATE_SSH_KEY}}
+          script: |
+              docker pull ${{env.ECR_REPOSITORY}}
+              docker run -d -p 80:80 ${{ env.ECR_REPOSITORY }}
+  
+
 
       
 
