@@ -15,6 +15,8 @@ env:
   ECS_SERVICE: customer_propensity_flask_app
   ECS_TASK_DEFINITION: propensity-app-task-definition
   CONTAINER_NAME: propensity_flask_app
+  SERVER_PUBLIC_IP: 54.164.155.94.
+
 
 # defining the jobs
 jobs:
@@ -81,20 +83,12 @@ jobs:
           echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
       - name: Deploy docker image from ECR to EC2 instance
-        envs:
-          ECR_REPOSITORY: propensity_flask_app
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
-          AWS_REGION: us-east-1
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRETE_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          SERVER_PUBLIC_IP: 54.164.155.94.
-
         uses: appleboy/ssh-action@master
         with:
           host: ${{env.SERVER_PUBLIC_IP}}
           username: ec2-user
           key: ${{secrets.PRIVATE_SSH_KEY}}
+
           script: |
               docker pull ${{env.ECR_REPOSITORY}}
               docker run -d -p 80:80 ${{ env.ECR_REPOSITORY }}
