@@ -76,10 +76,9 @@ jobs:
           ECR_REGISTRY: public.ecr.aws/a0h9q2u0
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t propensity_model .
-          docker tag propensity_model:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:latest" >> $GITHUB_ENV
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
