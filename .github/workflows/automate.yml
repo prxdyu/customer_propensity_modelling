@@ -10,11 +10,11 @@ on:
 # adding environment variables
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: customer_propensity_flask_app
+  ECR_REPOSITORY: propensity_flask_app
   ECS_CLUSTER: customer_propensity_flask_app
   ECS_SERVICE: customer_propensity_flask_app
   ECS_TASK_DEFINITION: propensity-app-task-definition
-  CONTAINER_NAME: customer_propensity_flask_app
+  CONTAINER_NAME: propensity_flask_app
 
 # defining the jobs
 jobs:
