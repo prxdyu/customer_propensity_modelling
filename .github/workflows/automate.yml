@@ -77,7 +77,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t propensity_model .
-          docker tag propensity_model:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker tag propensity_model:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:latest" >> $GITHUB_ENV
 
