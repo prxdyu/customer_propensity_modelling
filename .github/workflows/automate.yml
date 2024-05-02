@@ -15,7 +15,7 @@ env:
   ECS_SERVICE: customer_propensity_flask_app
   ECS_TASK_DEFINITION: propensity-app-task-definition
   CONTAINER_NAME: propensity_flask_app
-  SERVER_PUBLIC_IP: 54.164.155.94.
+  SERVER_PUBLIC_IP: 54.164.155.94
 
 
 # defining the jobs
