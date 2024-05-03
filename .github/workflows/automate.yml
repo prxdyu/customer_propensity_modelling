@@ -87,7 +87,31 @@ jobs:
         with:
           host: ${{env.SERVER_PUBLIC_IP}}
           username: ubuntu
-          key: ${{secrets.PRIVATE_SSH_KEY}}
+          key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAQEAup1ZLF/zE7eysXGCsYGVsY6K78TFDedpCT5iVtk97EeYLH0s0nNJ
+lBUhPwT/Def6VpzcPBRdXRJ4ZkEwNs+lDGlQV4MTzc6jwHfMZApso6WJQxKSlBRQncFaZk
+f0Lqg5Q0xYDByu/Ao0b+67uJVYyHjaHJHHjnQKcmGqqkDuZxJW3ZK/52HgvmO5eQa9B/SR
+diSHLhZAs5zr893ljRLkjPH0UIJvzJSqgxizwyw796Kz5f19OmGonLEGjajOn6xi2gJuHK
+kYOWaOeizb/KNlcpYsNPXmSaHXHjt7xAnWM5G89+Pkfgy+wfF26+1XQFGI0Mqi/DcEPlZg
+vYw7aWHJKQAAA9Dq/aH+6v2h/gAAAAdzc2gtcnNhAAABAQC6nVksX/MTt7KxcYKxgZWxjo
+rvxMUN52kJPmJW2T3sR5gsfSzSc0mUFSE/BP8N5/pWnNw8FF1dEnhmQTA2z6UMaVBXgxPN
+zqPAd8xkCmyjpYlDEpKUFFCdwVpmR/QuqDlDTFgMHK78CjRv7ru4lVjIeNockceOdApyYa
+qqQO5nElbdkr/nYeC+Y7l5Br0H9JF2JIcuFkCznOvz3eWNEuSM8fRQgm/MlKqDGLPDLDv3
+orPl/X06YaicsQaNqM6frGLaAm4cqRg5Zo56LNv8o2Vyliw09eZJodceO3vECdYzkbz34+
+R+DL7B8Xbr7VdAUYjQyqL8NwQ+VmC9jDtpYckpAAAAAwEAAQAAAQBYUS9quN4pbr67C6V2
+rIVTysomP1GjCunC3itcPuP3dsqmA3e7AaTI2FcrpAmxYyAu7X2tUVX+PkeM3T0cM5lBDn
+ZfdEFjHXCSHiA1GFnh+O3FOHz2Z8bfYiqOTW9axXKUTwU8dja6QXofnzRoXwXtmoRfEP8I
+hBKNn3tNp/0r+cpJeglTtGD5NJuS2fVQ+5uBQu1P36ignbwA1pepTBpQ5XVb8Xi9U7VgRg
+BwpaRKu4wutfL73MD/PoDM0powWjFfVmPVr6Xt/rSQt+SAQJIvZjml9++jpZwxFrJy5OtZ
+BPEZk/AxvRwJU4GbgXMoZ0zvtBjY5LPEic/bCTRmhBSBAAAAgFYQDfJOEkRvsNCrVnDuFz
+Z6VNmD62uU0pcXYOD0Fth7QLR+ffJhpnEK5SWjvpmCThx9y9E/7fzVbpBhM0Z0zL0RnX8R
+vzyRWLOmUbAMLnd05jTdG13V9ruZXKsRpR/gFN1eNiyt0mDVOI7aHSXmeNIhasLvbwXA1C
+FvaUqLReT9AAAAgQDuVQ+ZubofRZr3+CrJozWkOt6zWirQhFnr2pZznwGwivCbHP8+gFQc
+Fz4xr3JpUAB/Sx4z4R8Kx2Fc+b+vN8ZIeStW5if9FO9L0XH4KSZ7OO5ylq7meDx/iDs/Si
+xC9x5Lv6Awm6YzgNNEXRr/NTx9WUyQYew5wRpzcSPoJ8bQRQAAAIEAyHLRkfVqkq0Zq3Qi
+u+dYrK37BtiiAhwPdWFtzfovjB4BCF5PUe1DgWFkkmXRSff+dX6HDk1xZFqQkelTcJlRyN
+FsjrHBIC4iUvkvMUdUWiWlAllk/zGw4d1KOibe2B92EOTCqiGMRAU7bL0mWH1+HwUehacO
+ZpMtGZCbs5jT3ZUAAAAUcHJhZHl1XHByYWR5dUBQcmFkeXUBAgMEBQYH
           script: |
               whoami
               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com              docker pull 
