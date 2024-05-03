@@ -90,10 +90,9 @@ jobs:
           key: ${{secrets.PRIVATE_SSH_KEY}}
           script: |
               whoami
-              docker pull 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:d7fe3a85f54587654483905bf6ba0e40494308ef
-              docker run -d -p 5000:5000 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:d7fe3a85f54587654483905bf6ba0e40494308ef	
-
-
+              aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
+              docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+              docker run -d -p 5000:5000 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         env:
           SSH_DEBUG: true
   
