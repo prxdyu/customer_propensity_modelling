@@ -107,7 +107,10 @@ jobs:
               docker pull 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
               CONTAINER_ID=$(docker ps --format "{{.ID}} {{.Names}}" | grep ":5000->5000" | awk '{print $1}')
               if [ -n "$CONTAINER_ID" ]; then
+                echo "Stopping container: $CONTAINER_ID"
                 docker stop $CONTAINER_ID
+              else
+                echo "No container found using port 5000"
               fi
               docker run -d -p 5000:5000  851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
   
