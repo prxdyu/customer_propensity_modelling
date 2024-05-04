@@ -90,6 +90,9 @@ jobs:
           key: ${{secrets.PRIVATE_SSH_KEY}}
           script: |
               whoami
+              echo "ECR_REGISTRY: $ECR_REGISTRY"
+              echo "ECR_REPOSITORY: $ECR_REPOSITORY"
+              echo "IMAGE_TAG: $IMAGE_TAG"
               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
               docker pull ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG};
               docker run -d -p 5000:5000 ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG};
