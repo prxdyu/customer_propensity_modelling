@@ -105,15 +105,20 @@ jobs:
               whoami
               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
               docker pull 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
-              CONTAINER_ID=$(docker ps --format "{{.ID}} {{.Names}}" | grep ":5000->5000" | awk '{print $1}')
-              if [ -n "$CONTAINER_ID" ]; then
-                echo "Stopping container: $CONTAINER_ID"
-                docker stop $CONTAINER_ID
+              # Check for existing processes using port 5000
+              PORT_IN_USE=$(netstat -tuln | grep ":5000")
+              if [ -n "$PORT_IN_USE" ]; then
+                echo "Port 5000 is already in use. Killing conflicting process..."
+                # Find the PID of the process using port 5000 and kill it
+                PID=$(lsof -t -i:5000)
+                if [ -n "$PID" ]; then
+                  kill -9 $PID
+                fi
               else
-                echo "No container found using port 5000"
+                echo "Port 5000 is not in use"
               fi
-              docker run -d -p 5000:5000  851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
-  
+              # Run the Docker container
+              docker run -d -p 5000:5000 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
 
 
       
