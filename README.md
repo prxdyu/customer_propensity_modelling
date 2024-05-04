@@ -153,9 +153,11 @@ docker run -d -p 5000:5000 customer-propensity-model
 This command will start a Docker container based on the customer-propensity-model image, exposing port 5000 on the host machine. You can then access the Customer Propensity Model application by visiting http://localhost:5000 in your web browser
 
 
-#6. CI/CD Pipelines
+# 6. CI/CD Pipelines
 
 The project utilizes GitHub Actions for Continuous Integration (CI) and Continuous Delivery (CD) pipelines to automate the testing, building, and deployment processes.
+![1_jrdZWe4JRU5KDbWfnRxenA](https://github.com/prxdyu/customer_propensity_modelling/assets/105141574/dd8b33fe-5755-498c-83d7-24db2c807857)
+
 
 ### Continuous Integration (CI)
 
