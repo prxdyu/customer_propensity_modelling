@@ -78,7 +78,7 @@ The project is organized into several components:
 - **Dockerfile**: Defines the Docker image for containerizing the flask application.
 - **automate.yml**: Configures CI/CD pipelines for automated deployment.
 
-# 3. Src Package and Training/Prediction Pipeline
+## 3. Src Package and Training/Prediction Pipeline
 
 The src package contains modules for data processing, model training, and evaluation
 * **Data Ingestion**: Handles data loading and preprocessing.
@@ -91,7 +91,7 @@ We have 2 pipelines which are
 - **Training Pipeline**: The training pipeline consists of several steps including Data ingestion, Feature engineering, Data Preprocessing etc.. to train the model
 - **Prediction Pipeline**: The prediction pipeline utilizes the trained model to predict user purchase propensity based on input data.
 
-# 4. Flask Application
+## 4. Flask Application
 
 The Flask application serves as the interface for interacting with the Customer Propensity Model. It provides endpoints for viewing the home page, testing the server's availability, and making predictions using the trained model.
 
@@ -126,7 +126,7 @@ The prediction endpoint accepts the following input features:
 
 The prediction endpoint returns the predicted probability of the user making a purchase, expressed as a percentage.
 
-#5. Dockerfile and Containerization
+## 5. Dockerfile and Containerization
 
 The Dockerfile provided in the project repository allows for containerizing the Customer Propensity Model application using a multi-stage build strategy. This strategy helps reduce the size of the final Docker image by separating the build dependencies from the runtime environment.
 
@@ -153,9 +153,11 @@ docker run -d -p 5000:5000 customer-propensity-model
 This command will start a Docker container based on the customer-propensity-model image, exposing port 5000 on the host machine. You can then access the Customer Propensity Model application by visiting http://localhost:5000 in your web browser
 
 
-#6. CI/CD Pipelines
+## 6. CI/CD Pipelines
 
 The project utilizes GitHub Actions for Continuous Integration (CI) and Continuous Delivery (CD) pipelines to automate the testing, building, and deployment processes.
+![1_jrdZWe4JRU5KDbWfnRxenA](https://github.com/prxdyu/customer_propensity_modelling/assets/105141574/dd8b33fe-5755-498c-83d7-24db2c807857)
+
 
 ### Continuous Integration (CI)
 
