@@ -153,3 +153,39 @@ docker run -d -p 5000:5000 customer-propensity-model
 This command will start a Docker container based on the customer-propensity-model image, exposing port 5000 on the host machine. You can then access the Customer Propensity Model application by visiting http://localhost:5000 in your web browser
 
 
+#6. CI/CD Pipelines
+
+The project utilizes GitHub Actions for Continuous Integration (CI) and Continuous Delivery (CD) pipelines to automate the testing, building, and deployment processes.
+
+### Continuous Integration (CI)
+
+The CI pipeline ensures the correctness and reliability of the Customer Propensity Model application by running automated tests using pytest. These tests validate the functionality of key endpoints in the Flask application. The test.py file is responsible for running the tests to ensure the proper running of flask application
+
+#### Test Workflow
+
+- **Workflow Name**: Containerizing the Image and deploying it to EC2
+- **Trigger**: Automatically triggered upon pushing changes to the `main` branch.
+- **Jobs**:
+  - **Job 1**: Runs tests with pytest.
+  - **Job 2**: Deploys the Docker image to Amazon EC2 instance.
+
+### Continuous Delivery (CD)
+
+The CD pipeline automates the deployment of the Docker image containing the Flask application to an Amazon EC2 instance.
+
+#### Workflow Steps
+
+1. **Checkout**: Checks out the code from the repository.
+2. **Install Python 3**: Sets up the Python environment for testing.
+3. **Install Dependencies**: Installs project dependencies listed in `requirements_dev.txt`.
+4. **Run tests with pytest**: Executes automated tests using pytest.
+5. **Print AWS Secrets**: Prints AWS access keys for authentication.
+6. **Configure AWS Credentials**: Configures AWS credentials for accessing services.
+7. **Login to Amazon ECR**: Logs in to Amazon Elastic Container Registry (ECR) for container image storage.
+8. **Build, tag, push image to Amazon ECR**: Builds the Docker image, tags it, and pushes it to Amazon ECR.
+9. **Deploy docker image from ECR to EC2 instance**: Deploys the Docker image from ECR to an EC2 instance, running the Flask application.
+
+These CI/CD pipelines ensure the application is thoroughly tested and efficiently deployed to the production environment, enhancing development productivity and maintaining application quality.
+
+
+
