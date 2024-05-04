@@ -106,7 +106,7 @@ jobs:
               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
               docker pull 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:cbc58edd0910a98e2de381b72c48f6f6567a4bb6;
               # Check for existing processes using port 5000
-              PORT_IN_USE=$(netstat -tuln | grep ":5000")
+              PORT_IN_USE=$(ss -tuln | grep ":5000")
               if [ -n "$PORT_IN_USE" ]; then
                 echo "Port 5000 is already in use. Killing conflicting process..."
                 # Find the PID of the process using port 5000 and kill it
