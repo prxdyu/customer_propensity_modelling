@@ -126,7 +126,7 @@ The prediction endpoint accepts the following input features:
 
 The prediction endpoint returns the predicted probability of the user making a purchase, expressed as a percentage.
 
-#5. Dockerfile and Containerization
+# 5. Dockerfile and Containerization
 
 The Dockerfile provided in the project repository allows for containerizing the Customer Propensity Model application using a multi-stage build strategy. This strategy helps reduce the size of the final Docker image by separating the build dependencies from the runtime environment.
 
