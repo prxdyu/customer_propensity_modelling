@@ -78,6 +78,19 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
+      - name: Set ECR Registry URL
+        run: echo "::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}"
+        id: set-ecr-registry
+
+      - name: Set ECR Repository Name
+        run: echo "::set-output name=ECR_REPOSITORY::propensity_flask_app"
+        id: set-ecr-repository
+
+      - name: Set Docker Image Tag
+        run: echo "::set-output name=IMAGE_TAG::${{ github.sha }}"
+        id: set-image-tag
+
+
       - name: Deploy docker image from ECR to EC2 instance
         id: deploy-image
         env:
@@ -90,13 +103,12 @@ jobs:
           key: ${{secrets.PRIVATE_SSH_KEY}}
           script: |
               whoami
-              echo "ECR_REGISTRY: $ECR_REGISTRY"
-              echo "ECR_REPOSITORY: $ECR_REPOSITORY"
-              echo "IMAGE_TAG: $IMAGE_TAG"
+              echo "ECR_REGISTRY: ${ECR_REGISTRY}"
+              echo "ECR_REPOSITORY: ${ECR_REPOSITORY}"
+              echo "IMAGE_TAG: ${IMAGE_TAG}"
               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
-              docker pull  851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:${IMAGE_TAG}
-              docker run -d -p 5000:5000 851725554615.dkr.ecr.us-east-1.amazonaws.com/propensity_flask_app:${IMAGE_TAG}
-        
+              docker pull ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG};
+              docker run -d -p 5000:5000 ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG};
   
 
 
