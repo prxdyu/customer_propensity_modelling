@@ -1,7 +1,7 @@
 # Customer Propensity Model
 
 ## 1. Introduction to the Project
-The Customer Propensity Model project aims to assist an early-stage e-commerce company in increasing its conversion rates by predicting the likelihood of a user making a purchase. By analyzing user behavior and historical data, the model predicts the probability of a user purchasing a product within a specified time frame, allowing the company to target users with personalized marketing campaigns effectively.
+The Customer Propensity Model project aims to assist an early-stage e-commerce company in increasing its conversion rates by predicting the likelihood of a user making a purchase. we are going to build a model by analyzing user behavior and historical data and use the model to  predict the probability of a user purchasing a product within a specified time frame, allowing the company to target users with personalized marketing campaigns effectively.
 ## 2. Project Structure
 
 ```bash
