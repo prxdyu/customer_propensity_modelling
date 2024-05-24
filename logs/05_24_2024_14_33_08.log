@@ -1,0 +1,22 @@
+[2024-05-24 14:33:10,845] - 97  werkzeug - INFO- [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2024-05-24 14:33:10,846] - 97  werkzeug - INFO- [33mPress CTRL+C to quit[0m
+[2024-05-24 14:33:12,308] - 97  werkzeug - INFO- 127.0.0.1 - - [24/May/2024 14:33:12] "[33mGET /recommend HTTP/1.1[0m" 404 -
+[2024-05-24 14:33:12,573] - 97  werkzeug - INFO- 127.0.0.1 - - [24/May/2024 14:33:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2024-05-24 14:33:16,383] - 97  werkzeug - INFO- 127.0.0.1 - - [24/May/2024 14:33:16] "GET / HTTP/1.1" 200 -
+[2024-05-24 14:33:17,973] - 97  werkzeug - INFO- 127.0.0.1 - - [24/May/2024 14:33:17] "GET /predict HTTP/1.1" 200 -
+[2024-05-24 14:33:43,974] - 109  root - INFO- Dataframe Gathered
+[2024-05-24 14:33:43,977] - 110  root - INFO- The cols areIndex(['Category', 'SubCategory', 'days_active', 'R', 'F', 'M', 'Loyalty',
+       'Avg Purchase Gap', 'add_to_cart_to_purchase_ratios',
+       'add_to_wishlist_to_purchase_ratios',
+       'click_wishlist_page_to_purchase_ratios', 'user_path',
+       'cart_to_purchase_ratios_category',
+       'cart_to_purchase_ratios_subcategory',
+       'wishlist_to_purchase_ratios_category',
+       'wishlist_to_purchase_ratios_subcategory',
+       'click_wishlist_to_purchase_ratios_category',
+       'click_wishlist_to_purchase_ratios_subcategory',
+       'product_view_to_purchase_ratios_category',
+       'product_view_to_purchase_ratios_subcategory'],
+      dtype='object')
+[2024-05-24 14:33:44,098] - 97  werkzeug - INFO- 127.0.0.1 - - [24/May/2024 14:33:44] "POST /predict HTTP/1.1" 200 -

@@ -6,3 +6,4 @@ Author-email: pradyu1742@gmail.com
 Requires-Dist: scikit-learn
 Requires-Dist: pandas
 Requires-Dist: numpy
+Requires-Dist: category-encoders

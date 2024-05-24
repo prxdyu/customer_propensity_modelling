@@ -59,6 +59,9 @@ class ModelEvaluation:
                 else:
                     mlflow.sklearn.log_model(model, "model")
 
+                logging.info("Model Evaluation Completed Successfully")
+                
+
 
 
 

@@ -19,6 +19,6 @@ setup(
     version='0.0.1',
     author='prxdyu',
     author_email='pradyu1742@gmail.com',
-    install_requires=["scikit-learn","pandas","numpy"],
+    install_requires=["scikit-learn","pandas","numpy","category-encoders"],
     packages=find_packages()
 )

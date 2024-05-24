@@ -2,6 +2,15 @@ from flask import Flask,request,render_template
 from src.pipeline.prediction_pipeline import PredictionPipeline,CustomData
 import pandas as pd
 
+
+import sys
+import os
+
+print("Python executable:", sys.executable)
+print("sys.path:", sys.path)
+print("Installed packages:")
+os.system("pip freeze")
+
 app=Flask(__name__)
 
 

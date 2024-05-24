@@ -72,11 +72,11 @@ CustomerPropensityModel
 ```
 The project is organized into several components:
 
-- **artifacts**: Contains datasets and pre-trained models.
-- **src**: packages the source code for data processing, model training, and evaluation.
-- **app.py**: A simple flask application to build API for getting the model predictions.
-- **Dockerfile**: Defines the Docker image for containerizing the flask application.
-- **automate.yml**: Configures CI/CD pipelines for automated deployment.
+- `artifacts`: Contains datasets and pre-trained models.
+- `src`: packages the source code for data processing, model training, and evaluation.
+- `app.py` : A simple flask application to build API for getting the model predictions.
+- `Dockerfile` : Defines the Docker image for containerizing the flask application.
+- `automate.yml` : Configures CI/CD pipelines for automated deployment.
 
 ## 3. Src Package and Training/Prediction Pipeline
 

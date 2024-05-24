@@ -1,5 +1,5 @@
 # defining the name of the workflow (Containerizing the Image and deploying it to ECS) ==> Continuous Delivery
-name: Deploy to Amazon EC2
+name: CI/CD Pipeline
 
 # specifying this workflow will get triggered if we push anything to the main branch
 on:
@@ -11,17 +11,13 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: propensity_flask_app
-  ECS_CLUSTER: customer_propensity_flask_app
-  ECS_SERVICE: customer_propensity_flask_app
-  ECS_TASK_DEFINITION: propensity-app-task-definition
   CONTAINER_NAME: propensity_flask_app
-  SERVER_PUBLIC_IP: ec2-3-94-103-223.compute-1.amazonaws.com
 
 
 # defining the jobs
 jobs:
-  # defining job1
-  job1:
+  # defining Continous integration which tested our application when any push happends
+  Continous-Integration:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,9 +36,9 @@ jobs:
       - name: Run tests with pytest
         run: pytest test.py
 
-  # defining job2 which requires job1
-  job2:
-    needs: job1
+  # defining Continous delivery which builds and pushes docker image to AWS ECR
+  Continous-Delivery:
+    needs: Continous-Integration
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -82,21 +78,45 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image = $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
-      - name: Deploy docker image from ECR to EC2 instance
-        id: deploy-image
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{env.SERVER_PUBLIC_IP}}
-          username: ubuntu
-          key: ${{secrets.PRIVATE_SSH_KEY}}
-          run: |
-              whoami
-              aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
-              docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG;
-              docker run -d -p 5000:5000 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG;
+  # defining Continous deployment which pulls docker image from AWS ECR and pushed it to the EC2 instance
+  Continous-Deployment:
+    needs: Continous-Delivery
+    runs-on: self-hosted
+    environment: production
+    steps:
+
+      - name: Stop containers running on port 5000
+        run: |
+              #!/bin/bash
+              
+              # List running containers and filter those listening on port 5000
+              containers=$(docker ps --format '{{.ID}} {{.Ports}}' | grep ':5000->5000')
+
+              # Stop each container
+              while IFS= read -r container; do
+                  container_id=$(echo "$container" | awk '{print $1}')
+                  echo "Stopping container $container_id"
+                  docker stop "$container_id"
+              done <<< "$containers"
+
+       - name: Deploy docker image from ECR to EC2 instance
+         id: deploy-image
+         env:
+            ECR_REGISTRY: 851725554615.dkr.ecr.us-east-1.amazonaws.com
+            ECR_REPOSITORY: market_basket_analysis
+            IMAGE_TAG: ${{ github.sha }}
+          
+            run: |
+                whoami
+                echo "ECR_REGISTRY: $ECR_REGISTRY"
+                echo "ECR_REPOSITORY: $ECR_REPOSITORY"
+                echo "IMAGE_TAG: $IMAGE_TAG"
+                aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725554615.dkr.ecr.us-east-1.amazonaws.com
+                docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG;
+                docker stop $CONTAINER_NAME || true
+                docker rm $CONTAINER_NAME || true
+                docker run -d -p 5000:5000 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG;
+                docker system prune -f 
         
   
 
